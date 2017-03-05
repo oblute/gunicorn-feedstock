@@ -10,10 +10,6 @@ source:
   fn: {{ name }}-{{ version}}.tar.gz
   url: https://github.com/benoitc/gunicorn/archive/{{ version }}.tar.gz
   sha256: ded14b8b6c24a92006ef4131a6a8bfc0b9c858ba48a7cc5247caee56bd735d65
-  patches:
-    # See https://github.com/conda-forge/staged-recipes/pull/885#discussion_r68602712
-    # git diff --no-prefix -- gunicorn/workers/_gaiohttp.py /dev/null
-    - no_gaiohttp.patch  # [py2k]
 
 build:
   skip: True  # [win]
