@@ -18,7 +18,6 @@ build:
   preserve_egg_dir: True
   entry_points:
     - gunicorn=gunicorn.app.wsgiapp:run
-    - gunicorn_django=gunicorn.app.djangoapp:run
     - gunicorn_paster=gunicorn.app.pasterapp:run
 
 requirements:
