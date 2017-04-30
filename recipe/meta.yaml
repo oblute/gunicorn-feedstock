@@ -1,5 +1,6 @@
 {% set name = "gunicorn" %}
-{% set version = "19.7.1" %}
+{% set version = "19.3.0" %}
+{% set sha256 = "8bc835082882ad9a012cd790c460011e4d96bf3512d98a04d3dabbe45393a089" %}
 {% set build = 0 %}
 
 package:
@@ -9,7 +10,7 @@ package:
 source:
   fn: {{ name }}-{{ version}}.tar.gz
   url: https://pypi.io/packages/source/g/gunicorn/gunicorn-{{ version }}.tar.gz
-  sha256: eee1169f0ca667be05db3351a0960765620dad53f53434262ff8901b68a1b622
+  sha256: {{ sha256 }}
 
 build:
   skip: True  # [win]
@@ -54,3 +55,4 @@ extra:
     - kwilcox
     - daf
     - jakirkham
+    - sodre
