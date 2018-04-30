@@ -1,7 +1,6 @@
 {% set name = "gunicorn" %}
 {% set version = "19.8.1" %}
 {% set sha256 = "bc59005979efb6d2dd7d5ba72d99f8a8422862ad17ff3a16e900684630dd2a10" %}
-{% set build = 0 %}
 
 package:
   name: {{ name }}
