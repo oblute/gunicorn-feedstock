@@ -1,20 +1,17 @@
-{% set name = "gunicorn" %}
 {% set version = "19.8.0" %}
-{% set sha256 = "eb8d8924b117a609fae9f8cd85df0cad3535dd613fdbcdbba3ee88d5459f1d4f" %}
 
 package:
-  name: {{ name }}
+  name: gunicorn
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version}}.tar.gz
   url: https://pypi.io/packages/source/g/gunicorn/gunicorn-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: eb8d8924b117a609fae9f8cd85df0cad3535dd613fdbcdbba3ee88d5459f1d4f
 
 build:
   skip: True  # [win]
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   preserve_egg_dir: True
   entry_points:
     - gunicorn=gunicorn.app.wsgiapp:run
@@ -23,8 +20,7 @@ build:
 requirements:
   build:
     - python
-    - setuptools
-
+    - pip
   run:
     - python
     - setuptools
