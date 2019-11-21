@@ -10,6 +10,7 @@ source:
 
 build:
   skip: True  # [win]
+  skip: True  # [py27]
   number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   preserve_egg_dir: True
