@@ -15,7 +15,6 @@ build:
   preserve_egg_dir: True
   entry_points:
     - gunicorn=gunicorn.app.wsgiapp:run
-    - gunicorn_paster=gunicorn.app.pasterapp:run
 
 requirements:
   build:
@@ -34,7 +33,6 @@ test:
     - gunicorn.workers
   commands:
     - gunicorn --help
-    - gunicorn_paster --help
   requires:
     - paste
     - pastedeploy
