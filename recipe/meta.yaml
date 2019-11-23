@@ -1,4 +1,4 @@
-{% set version = "19.8.0" %}
+{% set version = "20.0.1" %}
 
 package:
   name: gunicorn
@@ -6,16 +6,16 @@ package:
 
 source:
   url: https://pypi.io/packages/source/g/gunicorn/gunicorn-{{ version }}.tar.gz
-  sha256: eb8d8924b117a609fae9f8cd85df0cad3535dd613fdbcdbba3ee88d5459f1d4f
+  sha256: af142bd7f6d176872e18681c847b9c0e79bc98ac24b91f95da04b18a6a77f282
 
 build:
   skip: True  # [win]
+  skip: True  # [py27]
   number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   preserve_egg_dir: True
   entry_points:
     - gunicorn=gunicorn.app.wsgiapp:run
-    - gunicorn_paster=gunicorn.app.pasterapp:run
 
 requirements:
   build:
@@ -34,7 +34,6 @@ test:
     - gunicorn.workers
   commands:
     - gunicorn --help
-    - gunicorn_paster --help
   requires:
     - paste
     - pastedeploy
