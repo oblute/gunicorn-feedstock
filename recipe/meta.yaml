@@ -27,7 +27,7 @@ requirements:
 test:
   imports:
     - gunicorn
-    - gunicorn.app
+    - gunicorn.app  # [unix]
     - gunicorn.http  # [unix]
     - gunicorn.instrument
     - gunicorn.workers
