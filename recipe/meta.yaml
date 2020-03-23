@@ -28,7 +28,7 @@ test:
   imports:
     - gunicorn
     - gunicorn.app
-    - gunicorn.http
+    - gunicorn.http  # [unix]
     - gunicorn.instrument
     - gunicorn.workers
   commands:
